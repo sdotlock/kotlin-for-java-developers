@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     s3.isEmptyOrNull() eq false
 
     /* PLAYGROUND TWO CALLS */
-
+    safeCastPlayground()
 
     /* PLAYGROUND THREE CALLS */
 
@@ -34,4 +34,15 @@ fun String?.isEmptyOrNull(): Boolean {
     if (this == null || this == "") return true
         return false
 }
+
+/**
+ * Type cast as throws ClassCastException, if the cast is unsuccessful. Safe cast as? returns null, if the cast is unsuccessful.
+ * Declare the s variable to make the first line print null and the second one throw an exception.
+ */
+fun safeCastPlayground() {
+    val s = "samuel"
+    println(s as? Int)    // null
+    println(s as Int?)    // exception
+}
+
 
